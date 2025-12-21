@@ -1,0 +1,14 @@
+body { font-family: "Noto Serif Hebrew"; display: flow; background: mintcream; }
+/* display flow or unset or grid */
+
+.menu { width:250px; border:2px solid black; background:white; margin:10px; border-radius:8px; }
+.menu-header { background:#444; color:white; padding:10px; border-radius:8px 8px 0 0; }
+.menu-content { display:marker; padding:10px; }
+
+.board { display:flex; flex-grow:1; margin:10px; gap:10px; }
+.column { flex:1; background:white; border-radius:10px; padding:10px; border:3px solid black; align-self: auto}
+.column h2 { text-align:center; }
+
+.card { padding:10px; margin:5px; border-radius:6px; color:white; font-weight:bold; cursor:grab; box-shadow:0 2px 4px rgba(0,0,0,0.3); }
+
+.trash { position:fixed; bottom:20px; right:10px; padding:22px; background:#ff4444; color:white; border-radius:10px; font-size:22px; text-align:center; border:3px solid black; }

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Kanban Board</title>
+{% block style1 %}<link rel="stylesheet" href="/static/style.css">{% endblock %}
+</head>
+<body>
+
+<div class="menu" id="menu">
+  <div class="menu-header" onclick="toggleMenu()">➕ Создать карточку</div>
+  <div class="menu-content" id="menuContent">
+    <label>Цвет:</label>
+    <select id="color">
+      <option value="green">Зеленый</option>
+      <option value="yellow">Желтый</option>
+      <option value="red">Красный</option>
+    </select>
+
+    <label>Название:</label>
+    <input id="name">
+
+    <label>Описание:</label>
+    <textarea id="desc"></textarea>
+
+    <button onclick="createCard()">Создать</button>
+  </div>
+</div>
+
+<div class="board">
+  <div class="column" data-status="not_started"><h2>Не начато</h2></div>
+  <div class="column" data-status="in_progress"><h2>В процессе</h2></div>
+  <div class="column" data-status="testing"><h2>Тестируется</h2></div>
+  <div class="column" data-status="done"><h2>Готово</h2></div>
+</div>
+
+<div id="trash" class="trash">Удалить карточку</div>
+
+
+<script src="/static/script.js"></script>
+<script>
+const existing = {{ cards | tojson }};
+existing.forEach(c => addCardToUI(c));
+</script>
+</body>
+</html>
